@@ -31,7 +31,8 @@ func main() {
 	router := gin.Default()
 
 	config := cors.DefaultConfig()
-	config.AllowOrigins = []string{"http://localhost:3000", "http://localhost:8000", "http://mission.tumi.dev", "https://mission.tumi.dev"}
+	// config.AllowOrigins = []string{"http://localhost:3000", "http://localhost:8000", "http://mission.tumi.dev", "https://mission.tumi.dev"}
+	config.AllowAllOrigins = true
 	router.Use(cors.New(config))
 
 	router.GET("/missions/get/all", getMissions)
