@@ -53,7 +53,8 @@ const App = () => {
   function fetchUniqueResult() {
     const dailyHash = generateDailyHash();
     
-    fetch('http://localhost:11434/missions/get/unique?token=' + dailyHash)
+    // fetch('http://localhost:11434/missions/get/unique?token=' + dailyHash)
+    fetch('https://mission.tumi.dev/missions/get/unique?token=' + dailyHash)
       .then((res) => {
         return res.json();
       })
