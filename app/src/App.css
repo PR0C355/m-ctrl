@@ -1,0 +1,155 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  /* padding: 0; */
+  /* height: 100vh; */
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+
+.app {
+  min-height: 100vh;
+  /* width: 100%; */
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  transition: background-color 0.3s, color 0.3s;
+  /* position: relative; */
+}
+
+.head {
+  font-size: 36px;
+  font-weight: bold;
+  margin: '0 0 0 0';
+  margin-block: '0 0 0 0';
+  margin-bottom: 0px;
+  margin-top: 0px;
+  text-align: center;
+  display: inline;
+}
+
+.mission-container {
+  max-width: 100%;
+  /* background-color: rgba(255, 255, 255, 0.1); */
+  /* border-radius: 15px; */
+  /* padding: 10px; */
+  /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); */
+  text-align: center;
+}
+
+.mission-title {
+  margin: auto;
+  /* font-size: 28px; */
+  /* font-size: 50vw; */
+  font-weight: bold;
+}
+
+.mission-instructions {
+  margin: auto;
+  /* font-size: 18px; */
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.mission-video {
+  font-size: 16px;
+  font-style: italic;
+  margin-bottom: 30px;
+}
+
+.new-mission-btn-dark {
+  border: none;
+  padding: 12px 24px;
+  font-size: 18px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  background-color: #fff;
+  color: #333;
+}
+
+.new-mission-btn-light {
+  border: none;
+  padding: 12px 24px;
+  font-size: 18px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  background-color: #333;
+  color: #fff;
+}
+
+.new-mission-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.new-mission-btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-mode-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.toggle-mode-btn:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 480px) {
+  .mission-container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .mission-title {
+    /* font-size: 24px; */
+    font-size: 8vw;
+  }
+  
+  .mission-instructions {
+    font-size: 4vw;
+  }
+  
+  .mission-video {
+    font-size: 14px;
+  }
+  
+  .new-mission-btn {
+    font-size: 16px;
+    /* padding: 10px 20px; */
+    padding: auto;
+  }
+}
+.video-responsive {
+  /* max-width: 56.25%; */
+  height: 70vh;
+  /* overflow: hidden; */
+  margin: auto;
+  /* padding-bottom: 56.25%; */
+  /* padding-bottom: 177.78%; */
+  position: relative;
+}
+
+.video-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 70vh;
+  width: 98%;
+  position: center;
+}
