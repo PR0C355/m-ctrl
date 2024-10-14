@@ -3,12 +3,14 @@ import Mission from './Mission';
 
 const App = () => {
 
+  // State to hold the mission
   const [mission, setMission] = useState({
     title: 'Initial Mission',
     instructions: 'These are the initial instructions.',
     id: 'Initial Video'
   });
 
+  // Function to generate a new token
   function generateNewToken() {
     // Generate a UUID v4
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
@@ -18,6 +20,7 @@ const App = () => {
     });
   }
 
+  // Function to regenerate the token
   function regenerateToken() {
     const newToken = generateNewToken();
     localStorage.setItem('sessionToken', newToken);
@@ -25,6 +28,7 @@ const App = () => {
     window.location.reload(); 
   }
 
+  // Function to generate a daily hash
   function generateDailyHash() {
     // Check for existing session token, if not found, generate a new one
     let sessionToken = localStorage.getItem('sessionToken');
@@ -53,7 +57,10 @@ const App = () => {
   function fetchUniqueResult() {
     const dailyHash = generateDailyHash();
     
+    // THis is the fetch for the local server
     // fetch('http://localhost:11434/missions/get/unique?token=' + dailyHash)
+
+    // This is the fetch for the remote server
     fetch('https://mission.tumi.dev/missions/get/unique?token=' + dailyHash)
       .then((res) => {
         return res.json();
@@ -70,11 +77,6 @@ const App = () => {
     useEffect(() => {
       // Fetch unique user & day mission
       fetchUniqueResult();
-  
-      // If you need cleanup, return a function
-      return () => {
-        // Cleanup code here
-      };
     }, []); // Empty dependency array
   
     return (
@@ -86,15 +88,6 @@ const App = () => {
     />
     );
   }
-
-  // return (
-  //   <Mission
-  //     title={mission.title}
-  //     instructions={mission.instructions}
-  //     id={mission.id}
-  //     onNewMission={generateNewMission}
-  //   />
-  // );
   return (Main());
 };
 

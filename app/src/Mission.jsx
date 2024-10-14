@@ -15,14 +15,12 @@ function MissionInstructions({ instructions }) {
         <>
         <h3 className="mission-instructions">{instructions}</h3>
         </>
-        // <p className="mission-instructions">{instructions}</p>
     );
 }
 
 const Mission = ({ title, instructions, id, onNewMission }) => {
     const [isDarkMode, setIsDarkMode] = useState(localStorage.getItem('darkMode') === 'true' ? true : false);
 
-    
     const lightTheme = {
         backgroundColor: '#f0f0f0',
         color: '#333',
@@ -38,6 +36,7 @@ const Mission = ({ title, instructions, id, onNewMission }) => {
         localStorage.setItem('darkMode', !isDarkMode);
     };
 
+    
     function Header() {
         return (
           <header>
@@ -56,8 +55,7 @@ const Mission = ({ title, instructions, id, onNewMission }) => {
     }
     
         
-    return (
-        
+    return (  
         <div className="app" style={isDarkMode ? darkTheme : lightTheme}>
             <div className="mission-container">
                 <Header />
