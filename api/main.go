@@ -93,6 +93,7 @@ func loadMissionsIntoMemory(path string) {
 
 }
 
+// generateDailyHash generates a hash based on the session token and the current date
 func generateDailyHash(sessionToken string) string {
 	// Generate a hash based on the session token and the current date
 	currentDate := time.Now().Format("2006-01-02")
@@ -112,6 +113,7 @@ func getMissions(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, missions)
 }
 
+// getMissionByID returns a mission based on the ID
 func getMissionByID(c *gin.Context) {
 	// Get the ID from the URL
 	id := c.Param("id")
@@ -130,11 +132,13 @@ func getMissionByID(c *gin.Context) {
 	c.IndentedJSON(http.StatusNotFound, gin.H{"message": "Mission not found."})
 }
 
+// getRandomMission returns a random mission
 func getRandomMission(c *gin.Context) {
 	// Use the current time as a seed for the random number generator
 	c.IndentedJSON(http.StatusOK, missions[rand.Intn(len(missions))])
 }
 
+// getUniqueMission generates a unique mission based on the session token
 func getUniqueMission(c *gin.Context) {
 
 	// Get the session token from the query string
